@@ -1,3 +1,19 @@
 <ion-app>
-  <ion-router-outlet></ion-router-outlet>
+  <ion-header>
+    <a routerLink="/home">Home Page</a> <br />
+    <a routerLink="/about">About</a>
+    <div *ngIf="user.userType == 'admin'">
+      <br />
+      <a routerLink="/categories">Admin Dashboard</a>
+      <br />
+    </div>
+  </ion-header>
+  <h1>Hello {{ user.displayName }}!</h1>
+  <button (click)="changeMe()">CLICK!</button>
+  <h2>{{ data }}</h2>
+
+  <button (click)="reload()">Refresh</button>
+  <ion-content>
+    <ion-router-outlet></ion-router-outlet>
+  </ion-content>
 </ion-app>

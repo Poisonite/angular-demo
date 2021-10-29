@@ -7,4 +7,18 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   constructor() {}
+
+  user = {
+    displayName: 'Zac',
+    userType: 'user',
+  };
+
+  data = 'First State';
+  changeMe() {
+    this.data = 'Second State';
+  }
+
+  reload() {
+    window.location.reload();
+  }
 }
